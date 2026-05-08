@@ -1,0 +1,26 @@
+Leetcode 1 : https://leetcode.com/problems/two-sum/description/
+
+Constraints : 
+
+2 <= nums.length <= 104
+-109 <= nums[i] <= 109
+-109 <= target <= 109
+
+
+First Approach : Sort the Array  - O(nlogn)
+
+After Sorting the array use two pointers, because monotonicity acheived by sorting. One pointers increase
+from left side and another pointer decreasing from right side.
+
+If multiple answers exists? Simply store in result, because it doesn't contain duplicates as of now.
+
+What if duplicates exists & multiple answers? We sort the array and just skip the duplicates by checking previous.
+
+
+Second Approach : HashSet - O(n) time and O(n) space
+
+Use a hashset to store the number and in every loop check if difference exists in the set if only existence required
+Use hashmap if we need to return the index.
+
+In terms of duplicates, only store one occurence of any number to avoid duplicates.
+
