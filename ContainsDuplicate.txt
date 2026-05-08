@@ -1,0 +1,14 @@
+Lettcode 217: https://leetcode.com/problems/contains-duplicate/description/
+
+Trivial Approach -> Use a hashet to find if we can do the duplicates, If we are supposed to return duplicate element
+                    simply return current ith element
+
+Multiple Duplicates -> Just don't break the loop and add the answer to any list
+
+Contains Duplicates within K Distance? 
+Use a set and a sliding window to keep the numbers in set for a particular window.
+
+Frequent Duplicates -> Use a map to store the frequency of duplicated elements.
+
+
+
