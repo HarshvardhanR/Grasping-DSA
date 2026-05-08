@@ -1,2 +1,11 @@
 Leetcode 242 : https://leetcode.com/problems/valid-anagram/description/
 
+Trivial Approach : Two hashmap
+Use two maps to store both string respectively and check if they are equal.
+
+What if you are to ignore space and UpperCase letters? 
+Just strip the string with space and put with a lower lettercase in two maps.
+
+What if k-anagrams? You are allowed to change at most k elements
+Use two frequency arrays and lastly check mismatch from first string. As anagram length should be same only checking
+from one string gives us the imbalance as it is implied from definition of anagram.
