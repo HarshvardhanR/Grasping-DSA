@@ -17,3 +17,8 @@ flow -> 4 flight -> 6, we compare flow != flig -> decrease the length
 flo -> fli, not same decrease the length
 fl -> fl same we set prefix to fl
 we reached end of string whatever is on the prefix or prefixlength we return the answer
+
+
+Very Unique Approach -> Sort the array
+
+When you sort the array, the first and last string in array will have most differences, so we check one by one what matches and that is your answer
