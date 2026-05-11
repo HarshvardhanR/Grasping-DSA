@@ -1,0 +1,5 @@
+Leetcode 912: Sort An array
+
+We can do quicksort or merge Sort
+
+Another nice approach : Using a TreeSet and get the keys and store it in a array
