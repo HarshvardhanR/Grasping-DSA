@@ -1,6 +1,6 @@
 Leetcode 49: https://leetcode.com/problems/group-anagrams/description/
 
-Approach: Hashmap
+Approach: Hashmap & Sorting each string
 
 Sort the string for each put it in a hashmap and whatever string is common or already exists you add it to list
 bca -> goes into hashmap  as abc -> {bca}
@@ -8,4 +8,9 @@ cba -> goes into hashmap as abc -> {bca, cba}
 dba -> goes into hashmap and hashmap becomes abc -> {bca, cba}
                                              abd -> {dba}
 at last return all the answer List from hashmap
+
+Another approach: Hashmap and a 26 size array with string transformation
+
+same thing as above, but this time just do the array to string for example lets say abc -> its array to string would
+abc -> 1#1#1#0#0#....etc you put this string in a map and do comparisons
 
