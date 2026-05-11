@@ -1,0 +1,6 @@
+Leetcode 706: Design HashMap
+
+Approach: Use array of size given in constraint
+just simply add remove and add with index
+
+Another approach: Using linkedList in a Node bucket array where Node contains key value and next
