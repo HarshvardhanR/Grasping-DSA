@@ -1,0 +1,9 @@
+Leetcode 14: https://leetcode.com/problems/longest-common-prefix/description/
+
+Trivial Approach - Take first string and its letter and compare each letter one by one with other strings. 
+For ex -> ["flower","flow","flight"] -> take flower as first string and its each letter one by one
+f -> flow, flight -> add f to stringBuilder
+l -> flow, flight -> add l to stringBuilder
+0 -> flow, flight -> works with flow but not flight break out
+return stringBuilder.toString
+
