@@ -1,0 +1,11 @@
+Leetcode 49: https://leetcode.com/problems/group-anagrams/description/
+
+Approach: Hashmap
+
+Sort the string for each put it in a hashmap and whatever string is common or already exists you add it to list
+bca -> goes into hashmap  as abc -> {bca}
+cba -> goes into hashmap as abc -> {bca, cba}
+dba -> goes into hashmap and hashmap becomes abc -> {bca, cba}
+                                             abd -> {dba}
+at last return all the answer List from hashmap
+
