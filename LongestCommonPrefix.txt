@@ -7,3 +7,13 @@ l -> flow, flight -> add l to stringBuilder
 0 -> flow, flight -> works with flow but not flight break out
 return stringBuilder.toString
 
+
+Another way is to create a prefix 
+Let's take the above example, take flower as prefix
+
+we check the prefix, to flower -> flow if prefix is bigger than current comparing string or prefix is not same we decrease the length
+flower -> 6 flow -> 4, we keep decreasing length to 4 -> so flow == flow, now we set prefix to flow
+flow -> 4 flight -> 6, we compare flow != flig -> decrease the length
+flo -> fli, not same decrease the length
+fl -> fl same we set prefix to fl
+we reached end of string whatever is on the prefix or prefixlength we return the answer
