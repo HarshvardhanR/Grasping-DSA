@@ -1,0 +1,14 @@
+Leetcode 705: https://leetcode.com/problems/design-hashset/description/
+
+Approach: Using a boolean array 
+It could use a high memory
+
+Approach: BitSet
+Use methods like set(index), clear(index), get(index) to simply just put and take
+
+Approach: Using array and its bits
+Use long array to get 64 bits in single bucket of array
+count |= (1L << mask) -> to set the bits
+count &= ~(1L << mask) -> to unset the bits
+count & (1L << mask) -> to get the bit and check contains
+

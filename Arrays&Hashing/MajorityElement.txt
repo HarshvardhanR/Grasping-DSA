@@ -1,0 +1,9 @@
+Leetcode 169: https://leetcode.com/problems/majority-element/description/
+
+Approach = HashMap -> O(n/2); 
+Use a hashmap to store each count and whichever count reaches more than n/2 return as ans.
+
+Another approach = Using a element and its count to be the deciding factor
+if same element increase counter or not then decrease counter, whenever count reaches n/2 do early return
+otherwise the expected element will eventually land in the element
+
