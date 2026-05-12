@@ -1,0 +1,10 @@
+Leetcode 560: https://leetcode.com/problems/subarray-sum-equals-k/description/
+
+Simply Use a map to store the sum with its frequency
+for example
+[1,1,1] and map = ({0,1})
+
+step by step
+sum = 1 map = ({0,1}, {1,1})
+sum = 2 map = ({0,1}, {1,1}, {2,1}) -> map contains (sum(2) - k(2) = 0) count = 1
+sum = 3 map = ({0,1}, {1,1}, {2,1}, {3,1}) -> map contains (sum(3) - k(2) = 1) count = 2 return count=2
