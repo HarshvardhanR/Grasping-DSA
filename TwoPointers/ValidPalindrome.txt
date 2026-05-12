@@ -1,0 +1,4 @@
+Leetcode 125: https://leetcode.com/problems/valid-palindrome/description/
+
+Simply strip all the space and then use two pointers and ignore white spaces.
+For the capital letters convert them to lower case
