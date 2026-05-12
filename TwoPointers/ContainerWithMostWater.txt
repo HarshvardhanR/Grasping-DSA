@@ -1,0 +1,21 @@
+Leetcode 11: https://leetcode.com/problems/container-with-most-water/description/
+
+Approach simply try to maximize the area between two pointers
+
+class Solution {
+    public int maxArea(int[] height) {
+        int maxWater = 0;
+        int i=0;
+        int j = height.length - 1;
+        while(i<j){
+            maxWater = Math.max(maxWater, Math.min(height[j], height[i]) * (j - i));
+            if(height[i] <= height[j]){
+                i++;
+            }
+            else{
+                j--;
+            }
+        }
+        return maxWater;
+    }
+}
