@@ -1,0 +1,18 @@
+Leetcode 122: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+
+Approach: Simple O(n) solution, if we find value smaller than current hold we buy it, otherwise we sell
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int currHold = prices[0]; 
+        int max = 0;
+        for(int j=1; j<prices.length; j++){
+            if(prices[j] > currHold){
+                max += prices[j] - currHold;
+            }
+            currHold = prices[j];
+        }
+
+        return max;
+    }
+}
