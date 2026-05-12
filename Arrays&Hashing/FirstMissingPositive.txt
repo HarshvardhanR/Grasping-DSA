@@ -1,0 +1,33 @@
+Leetcode 41: First Missing Positive
+
+Approach: Use a set and loop again from 1 to .. and check if set contains or not by increment 1 time each
+
+Approach: Cyclic sort + index position check
+
+class Solution {
+    public int firstMissingPositive(int[] nums) {
+        int i = 0;
+        int n = nums.length;
+        while(i < n){
+            int expectedPosition = nums[i] - 1;
+            if(expectedPosition >= 0 && expectedPosition < n && nums[expectedPosition] != nums[i]){
+                int temp = nums[expectedPosition];
+                nums[expectedPosition] = nums[i];
+                nums[i] = temp;
+            }
+            else{
+                i++;
+            }
+        }
+
+        int max = Integer.MIN_VALUE;
+        for(int j=0; j<nums.length; j++){
+            if(nums[j]!=j+1){
+                return j+1;
+            }
+            max = Math.max(nums[j], max);
+        }
+
+        return max + 1;
+    }
+}
