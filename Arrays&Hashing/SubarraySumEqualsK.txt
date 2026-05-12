@@ -1,5 +1,7 @@
 Leetcode 560: https://leetcode.com/problems/subarray-sum-equals-k/description/
 
+Brute Force would be checking each array giving n2 looping
+
 Simply Use a map to store the sum with its frequency
 for example
 [1,1,1] and map = ({0,1})
