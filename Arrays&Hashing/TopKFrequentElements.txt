@@ -1,0 +1,12 @@
+Leetcode 347: https://leetcode.com/problems/top-k-frequent-elements/description/
+
+Appraoch: Using TreeMap and getting the last k elements as it sorted in decreasing order or get the last elements by a iterator
+
+Approach : Using map for frequency and using a min heap would be nice rather than maxHeap as we might have to put all elements in maxHeap
+
+Approach: Here quickSelect also works but more complex and not trivial
+
+Approach: We could also use buckets and put the frequency elements in a bucket which stores the arrayList 
+
+For example ->  1,1,1,2,2,2,3,3    K=2   buckets = [{}, {}, {3}, {1,2}] -> start from end get the answer.
+
