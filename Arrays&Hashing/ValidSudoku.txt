@@ -1,0 +1,16 @@
+Leetcode 36: Valid Sudoku
+
+Use three set and traverse using two loops:
+It is trivial to get i,j index for each rows and columns
+but for the 3*3 matrix its tough
+
+so to get subgrid index for rows and columns
+
+subgridrow = 3 * (i/3)
+subgridcol = 3 * (i%3)
+
+board[subgridrow + j/3][subgridCol + j%3]
+
+
+Approach - Bit Manipulation 
+Use bits create a array of 9 space and it should be fine. For each row use one bucket and respectively same for others
