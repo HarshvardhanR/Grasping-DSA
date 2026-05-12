@@ -1,0 +1,6 @@
+Leetcode 238: https://leetcode.com/problems/product-of-array-except-self/description/
+
+Approach : Just create the prefix and suffix array for the multiplication 
+
+Better Approach: Just create one array use it as prefix and calculate suffix on demand
+
