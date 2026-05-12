@@ -1,0 +1,4 @@
+Leetcode 88: https://leetcode.com/problems/merge-sorted-array/description/
+
+Simply Use two pointers and add it to resultant array
+
