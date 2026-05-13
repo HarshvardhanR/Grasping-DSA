@@ -1,0 +1,32 @@
+Leetcode 42: https://leetcode.com/problems/trapping-rain-water/description/
+
+As we see from the problem, it seems to be of monotonic stack problem
+
+class Solution {
+    public int trap(int[] height) {
+        Stack<Integer> stack = new Stack<>();
+        int maxWater = 0;
+        for(int i=0; i<height.length; i++){
+
+            while(!stack.isEmpty() && height[i] > height[stack.peek()]){
+                int midBar = stack.pop();
+                
+                if(stack.isEmpty()){
+                    break;
+                }
+
+                int leftBar = stack.peek();
+
+                int distance = i - leftBar - 1;
+
+                int heightDiff = Math.min(height[leftBar], height[i]) - height[midBar];
+
+                maxWater += heightDiff * distance;
+            }
+
+            stack.push(i);
+        }
+
+        return maxWater;
+    }
+}
