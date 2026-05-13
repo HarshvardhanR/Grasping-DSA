@@ -1,0 +1,22 @@
+Leetcode 121: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+Use Two Pointers to track the max value the can be obtained with both pointers.
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int max = 0;
+        if(prices.length==1) return max;
+        int i = 0;
+        int j = 1;
+        while(i<prices.length && j<prices.length){
+            if(prices[j]>prices[i]){
+                max = Math.max(max, prices[j] - prices[i]);
+            }
+            else{
+                i = j;
+            }
+            j++;
+        }
+        return max;
+    }
+}
