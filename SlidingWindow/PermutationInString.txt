@@ -1,0 +1,33 @@
+Leetcode: 567 https://leetcode.com/problems/permutation-in-string/description/
+
+Simply Use the sliding window with s1 length and you should be fine.
+
+class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+        int[] sArray = new int[26];
+        int[] s2Array = new int[26];
+
+        if (s1.length() > s2.length()) return false;
+
+        for (char c : s1.toCharArray()) {
+            sArray[c - 'a']++;
+        }
+
+        int j = 0;
+
+        for (int i = 0; i < s2.length(); i++) {
+            s2Array[s2.charAt(i) - 'a']++;
+
+            if (i - j + 1 == s1.length()) {
+
+                if (Arrays.equals(sArray, s2Array)) {
+                    return true;
+                }
+                s2Array[s2.charAt(j) - 'a']--;
+                j++;
+            }
+        }
+
+        return false;
+    }
+}
