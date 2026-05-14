@@ -1,0 +1,38 @@
+Leetcode 232: https://leetcode.com/problems/implement-queue-using-stacks/description/
+
+class MyQueue {
+    Stack<Integer> backStack;
+    Stack<Integer> frontStack;
+    public MyQueue() {
+        backStack = new Stack<>();
+        frontStack = new Stack<>();
+    }
+    
+    public void push(int x) {
+        frontStack.push(x);
+    }
+    
+    public int pop() {
+        if(backStack.isEmpty()){
+            transfer();
+        }
+        return backStack.pop();
+    }
+    
+    public int peek() {
+        if(backStack.isEmpty()){
+            transfer();
+        }
+        return backStack.peek();
+    }
+    
+    public boolean empty() {
+        return backStack.isEmpty() && frontStack.isEmpty();
+    }
+
+    public void transfer(){
+        while(!frontStack.isEmpty()){
+            backStack.push(frontStack.pop());
+        }
+    }
+}
