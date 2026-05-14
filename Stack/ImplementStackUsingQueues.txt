@@ -1,0 +1,32 @@
+Leetcode 225: https://leetcode.com/problems/implement-stack-using-queues/description/
+
+class MyStack {
+    Queue<Integer> fQueue;
+    Queue<Integer> bQueue;
+    public MyStack() {
+        fQueue = new LinkedList<>();
+        bQueue = new LinkedList<>();
+    }
+    
+    public void push(int x) {
+        while(!fQueue.isEmpty()){
+            bQueue.offer(fQueue.poll());
+        }
+        fQueue.add(x);
+        while(!bQueue.isEmpty()){
+            fQueue.add(bQueue.poll());
+        }
+    }
+    
+    public int pop() {
+        return fQueue.poll();
+    }
+    
+    public int top() {
+        return fQueue.peek();
+    }
+    
+    public boolean empty() {
+        return fQueue.isEmpty();
+    }
+}
