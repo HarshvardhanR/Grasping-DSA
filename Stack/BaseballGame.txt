@@ -1,2 +1,35 @@
 Leetcode 682: https://leetcode.com/problems/baseball-game/description/
 
+Simply Use a stack to simulate the process of adding and removing with some conditions 
+
+class Solution {
+    public int calPoints(String[] operations) {
+        Stack<Integer> stack = new Stack<>();
+        int sum = 0;
+
+        for(String s : operations){
+            if(s.equals("+")){
+                int num = stack.pop();
+                int addedNumbers = num + stack.peek();
+                stack.push(num);
+                stack.push(addedNumbers);
+                sum += addedNumbers;
+            }
+            else if(s.equals("C")){
+                sum -= stack.pop();
+            }
+            else if(s.equals("D")){
+                int val = 2 * stack.peek();
+                stack.push(val);
+                sum += val;
+            }
+            else{
+                int val = Integer.parseInt(s);
+                stack.push(val);
+                sum += val;
+            }
+        }
+
+        return sum;
+    }
+}
