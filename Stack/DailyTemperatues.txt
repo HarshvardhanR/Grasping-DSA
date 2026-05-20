@@ -1,0 +1,4 @@
+Leetcode 739: Daily Temperatures
+
+Simply Use a stack to simulate the answer
+
