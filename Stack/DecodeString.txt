@@ -1,0 +1,44 @@
+Very nice problem understand this deeply
+
+class Solution {
+    int index = 0;
+
+    public String decodeString(String s) {
+        index = 0;
+        return dfs(s);
+    }
+
+    private String dfs(String s) {
+        StringBuilder sb = new StringBuilder();
+        int number = 0;
+
+        while (index < s.length()) {
+            char c = s.charAt(index);
+
+            if (Character.isDigit(c)) {
+                number = number * 10 + (c - '0');
+                index++;
+            } 
+            else if (c == '[') {
+                index++; // skip '['
+                String decoded = dfs(s);
+
+                for (int i = 0; i < number; i++) {
+                    sb.append(decoded);
+                }
+
+                number = 0;
+            } 
+            else if (c == ']') {
+                index++; // skip ']'
+                return sb.toString();
+            } 
+            else {
+                sb.append(c);
+                index++;
+            }
+        }
+
+        return sb.toString();
+    }
+}
