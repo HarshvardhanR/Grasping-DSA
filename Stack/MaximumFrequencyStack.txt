@@ -1,0 +1,73 @@
+Leetcode 859: Maximum Frequency Stack
+
+Solution with heap and map - logn for push, logn for pop
+
+class FreqStack {
+    PriorityQueue<int[]> pq;
+    Map<Integer, Integer> map;
+    int index = 0;
+    public FreqStack() {
+        pq = new PriorityQueue<>((a,b) -> {
+            if(b[0]==a[0]){
+                return Integer.compare(b[1], a[1]);
+            }
+            return Integer.compare(b[0], a[0]);
+        });
+        map = new HashMap<>();
+    }
+    
+    public void push(int val) {
+        int freq = map.getOrDefault(val, 0) + 1;
+        map.put(val, freq);
+        pq.offer(new int[]{freq, index, val});
+        index++;
+    }
+    
+    public int pop() {
+        int ans = pq.poll()[2];
+        int freq = map.get(ans) - 1;
+        if(freq==0) map.remove(ans);
+        else map.put(ans, freq);
+        return ans; 
+    }
+}
+
+Another approach - push and pop O(1) dynamic array or List
+
+class FreqStack {
+    Map<Integer, Integer> map;
+    Map<Integer, List<Integer>> freqMap;
+    int maxFreq;
+
+    public FreqStack() {
+        map = new HashMap<>();
+        freqMap = new HashMap<>();
+        maxFreq = 0;
+    }
+
+    public void push(int val) {
+        int freqToPut = map.getOrDefault(val, 0) + 1;
+
+        map.put(val, freqToPut);
+
+        maxFreq = Math.max(maxFreq, freqToPut);
+
+        freqMap.putIfAbsent(freqToPut, new ArrayList<>());
+
+        freqMap.get(freqToPut).add(val);
+    }
+
+    public int pop() {
+        List<Integer> temp = freqMap.get(maxFreq);
+
+        int ans = temp.remove(temp.size() - 1);
+
+        map.put(ans, map.get(ans) - 1);
+
+        if (temp.isEmpty()) {
+            maxFreq--;
+        }
+
+        return ans;
+    }
+}
